@@ -24,11 +24,9 @@ export default class GraphSummary extends React.Component {
         <Grid item xs={12}>
           <div className="Title">{title}</div>
         </Grid>
-        <Grid item container spacing={0} xs={8}>
-          <Grid item xs={3}>
+        <Grid item container spacing={1} xs={8}>
+          <Grid item xs={7}>
             <div className="Number">9401</div>
-          </Grid>
-          <Grid item xs={3}>
             <div className="Followers">Followers</div>
           </Grid>
           <Grid item xs={12}>

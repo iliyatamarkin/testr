@@ -29,6 +29,7 @@
   line-height: 1.93;
   letter-spacing: 0.05px;
   color: #8a96a0;
+  display: inline-block;
 }
 .Number {
   width: 34px;
@@ -42,6 +43,7 @@
   letter-spacing: normal;
   text-align: center;
   color: #37394c;
+  display: inline-block;
 }
 
 .Line {

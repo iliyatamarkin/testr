@@ -14,7 +14,7 @@ const StyledTableCell = withStyles(theme => ({
     color: '#b4bac6',
   },
   body: {
-    fontSize: 8,
+    fontSize: '7.5px',
   },
 }))(TableCell);
 
@@ -25,6 +25,14 @@ const StyledTableRow = withStyles(theme => ({
     },
   },
 }))(TableRow);
+
+const useStyles = makeStyles({
+  TableHeader: {
+    lineHeight: 'normal',
+    textTransform: 'none',
+    fontSize: '7.5px',
+  },
+});
 
 const supportRequests = [
   {
@@ -91,44 +99,65 @@ function createData(name, email, time, phone_number, city, status) {
   return { name, email, time, phone_number, city, status };
 }
 
-export default class SupportTable extends React.Component {
-  render() {
-    return (
-      <div>
-        <header>Support Requests</header>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>NAME</StyledTableCell>
-              <StyledTableCell align="left">EMAIL</StyledTableCell>
-              <StyledTableCell align="left">TIME</StyledTableCell>
-              <StyledTableCell align="left">PHONE NUMBER</StyledTableCell>
-              <StyledTableCell align="left">CITY</StyledTableCell>
-              <StyledTableCell align="left">STATUS</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map(row => (
-              <StyledTableRow key={row.name}>
-                <StyledTableCell component="th" scope="row">
-                  {row.name}
-                </StyledTableCell>
-                <StyledTableCell align="left">{row.email}</StyledTableCell>
-                <StyledTableCell align="left">{row.time}</StyledTableCell>
-                <StyledTableCell align="left">
-                  {row.phone_number}
-                </StyledTableCell>
-                <StyledTableCell align="left">{row.city}</StyledTableCell>
-                <StyledTableCell align="left">
-                  <Button variant="contained" color="primary">
-                    {row.status == 'unsent' ? 'Send' : 'Sent'}
-                  </Button>
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
-    );
-  }
-}
+const SupportTable = () => {
+  const classes = useStyles();
+
+  return (
+    <div>
+      <header style={{ margin: '15px' }}>Support Requests</header>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell className={classes.TableHeader}>
+              NAME
+            </StyledTableCell>
+            <StyledTableCell className={classes.TableHeader} align="left">
+              EMAIL
+            </StyledTableCell>
+            <StyledTableCell className={classes.TableHeader} align="left">
+              TIME
+            </StyledTableCell>
+            <StyledTableCell className={classes.TableHeader} align="left">
+              PHONE NUMBER
+            </StyledTableCell>
+            <StyledTableCell className={classes.TableHeader} align="left">
+              CITY
+            </StyledTableCell>
+            <StyledTableCell className={classes.TableHeader} align="left">
+              STATUS
+            </StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map(row => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.name}
+              </StyledTableCell>
+              <StyledTableCell align="left">{row.email}</StyledTableCell>
+              <StyledTableCell align="left">{row.time}</StyledTableCell>
+              <StyledTableCell align="left">{row.phone_number}</StyledTableCell>
+              <StyledTableCell align="left">{row.city}</StyledTableCell>
+              <StyledTableCell align="left">
+                <Button
+                  variant="outlined"
+                  size="small"
+                  style={{
+                    lineHeight: 'normal',
+                    backgroundColor: '#0077ff',
+                    textTransform: 'none',
+                    color: 'white',
+                    fontSize: '7.5px',
+                  }}
+                >
+                  {row.status == 'unsent' ? 'Send' : 'Sent'}
+                </Button>
+              </StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+};
+export default SupportTable;
