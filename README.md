@@ -10,6 +10,7 @@ In the project directory (\testr), you can run:
 Things left to finish:
 load jsons from links
 finish heights/fonts/paddings and propper spacing on the css/grid objects
+add other tabs
 
 
 
