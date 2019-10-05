@@ -26,46 +26,69 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-const rows = [
-  createData(
-    'Cecilia Welch',
-    'heather_keeling@gottlieb.com',
-    '01:06AM',
-    '215-593-5846',
-    'South Mariane'
-  ),
-  createData(
-    'Cecilia Welch',
-    'heather_keeling@gottlieb.com',
-    '01:06AM',
-    '215-593-5846',
-    'South Mariane'
-  ),
-  createData(
-    'Cecilia Welch',
-    'heather_keeling@gottlieb.com',
-    '01:06AM',
-    '215-593-5846',
-    'South Mariane'
-  ),
-  createData(
-    'Cecilia Welch',
-    'heather_keeling@gottlieb.com',
-    '01:06AM',
-    '215-593-5846',
-    'South Mariane'
-  ),
-  createData(
-    'Cecilia Welch',
-    'heather_keeling@gottlieb.com',
-    '01:06AM',
-    '215-593-5846',
-    'South Mariane'
-  ),
+const supportRequests = [
+  {
+    name: 'Cecilia Welch',
+    email: 'heather_keeling@gottlieb.ca',
+    timestamp: '2012-04-23T01:06:43.511Z',
+    phoneNumber: '215-293-5846',
+    city: 'Southe Mariane',
+    status: 'sent',
+  },
+  {
+    name: 'Sara Glover',
+    email: 'floyd_brakus@lindgren.com',
+    timestamp: '2012-04-23T00:22:43.511Z',
+    phoneNumber: '057-812-3947',
+    city: 'East Maryam',
+    status: 'sent',
+  },
+  {
+    name: 'Harriett Morgan',
+    email: 'jabari.kilback@nelson.tv',
+    timestamp: '2012-04-23T12:22:43.511Z',
+    phoneNumber: '866-668-0327',
+    city: 'Monserratmouth',
+    status: 'sent',
+  },
+  {
+    name: 'Susie Curry',
+    email: 'theo_gleichner@kaia.org',
+    timestamp: '2012-04-23T07:56:43.511Z',
+    phoneNumber: '647-851-5280',
+    city: 'Lonnyburgh',
+    status: 'sent',
+  },
+  {
+    name: 'Edgar Greer',
+    email: 'ankunding_ralph@gmail.com',
+    timestamp: '2012-04-23T08:35:43.511Z',
+    phoneNumber: '985-747-0063',
+    city: 'Schmittfurt',
+    status: 'unsent',
+  },
+  {
+    name: 'Minerva Massey',
+    email: 'lia_purdy@yahoo.com',
+    timestamp: '2012-04-23T03:24:43.511Z',
+    phoneNumber: '488-514-5012',
+    city: 'South Lori',
+    status: 'unsent',
+  },
 ];
+const rows = supportRequests.map(item =>
+  createData(
+    item.name,
+    item.email,
+    item.timestamp,
+    item.phoneNumber,
+    item.city,
+    item.status
+  )
+);
 
-function createData(name, email, time, phone_number, city) {
-  return { name, email, time, phone_number, city };
+function createData(name, email, time, phone_number, city, status) {
+  return { name, email, time, phone_number, city, status };
 }
 
 export default class SupportTable extends React.Component {
@@ -98,7 +121,7 @@ export default class SupportTable extends React.Component {
                 <StyledTableCell align="left">{row.city}</StyledTableCell>
                 <StyledTableCell align="left">
                   <Button variant="contained" color="primary">
-                    Send
+                    {row.status == 'unsent' ? 'Send' : 'Sent'}
                   </Button>
                 </StyledTableCell>
               </StyledTableRow>
