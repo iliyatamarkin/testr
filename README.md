@@ -23,8 +23,7 @@ Goal
 ○ Use any 3rd party library/framework where it makes sense.
 ○ UI library - choose one of the following (sorted by our preference) - React, Vue, Angular
 ○ Link to design - Zeplin
-a. Username (email): guest1@testr.io
-b. Password: guestpass
+
 ○ JSON data for display: initial_data.json
 ○ The design should be responsive (on a best-effort basis)
 ○ You are provided with images within Zeplin where needed (for example, do not draw the
