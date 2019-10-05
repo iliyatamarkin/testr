@@ -1,0 +1,49 @@
+.Pie-chart {
+  width: 54.5px;
+  height: 54.5px;
+  object-fit: contain;
+}
+
+.Graph {
+  width: 135px;
+  height: 50.5px;
+  object-fit: contain;
+}
+
+.Title {
+  font-family: Lato;
+  font-size: 7.5px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #354052;
+}
+.Followers {
+  font-family: Lato;
+  font-size: 7.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.93;
+  letter-spacing: 0.05px;
+  color: #8a96a0;
+}
+.Number {
+  width: 34px;
+  height: 16px;
+  font-family: Helvetica;
+  font-size: 13.5px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #37394c;
+}
+
+.Line {
+  border: solid 0.5px #f0f0f0;
+}
