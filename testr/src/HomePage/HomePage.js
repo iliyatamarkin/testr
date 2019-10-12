@@ -14,19 +14,14 @@ import { maxWidth } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
   Logo: {
     width: '18px',
     height: '20.5px',
     'object-fit': 'contain',
+  },
+  ConstSizeTab: {
+    maxWidth: '42.5px',
+    minWidth: '42.5px',
   },
 }));
 
@@ -46,23 +41,36 @@ const HomePage = () => {
         style={{ background: 'transparent', boxShadow: 'none' }}
       >
         <Toolbar>
-          <img src="logo.svg" className="Logo"></img>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
+          <img src="logo.svg" className={classes.Logo}></img>
           <Button color="inherit">Premium</Button>
         </Toolbar>
       </AppBar>
       <Box display="flex" flexDirection="row">
         <Tabs
-          style={{ maxWidth: '42.5px', minWidth: '42.5px' }}
+          className={classes.ConstSizeTab}
           value={value}
           orientation="vertical"
           onChange={handleChange}
         >
           <Tab
-            icon={<img src="dashboard.svg" className="Logo"></img>}
-            style={{ maxWidth: '42.5px', minWidth: '42.5px' }}
+            icon={<img src="dashboard.svg" className={classes.Logo}></img>}
+            className={classes.ConstSizeTab}
+          />
+          <Tab
+            icon={<img src="dashboard.svg" className={classes.Logo}></img>}
+            className={classes.ConstSizeTab}
+          />
+          <Tab
+            icon={<img src="dashboard.svg" className={classes.Logo}></img>}
+            className={classes.ConstSizeTab}
+          />
+          <Tab
+            icon={<img src="dashboard.svg" className={classes.Logo}></img>}
+            className={classes.ConstSizeTab}
+          />
+          <Tab
+            icon={<img src="dashboard.svg" className={classes.Logo}></img>}
+            className={classes.ConstSizeTab}
           />
         </Tabs>
         <Box p={4}>
